@@ -1,5 +1,5 @@
-using System;
 using Xunit;
+using Moq;
 
 namespace CreditCardApplications.Tests
 {
@@ -8,7 +8,10 @@ namespace CreditCardApplications.Tests
         [Fact]
        public void AcceptHighIncomeApplications()
         {
-            var sut = new CreditCardApplicationEvaluator(null);
+            Mock<IFrequentFlyerNumberValidator> mockValidator = 
+            new Mock<IFrequentFlyerNumberValidator>();
+
+            var sut = new CreditCardApplicationEvaluator(mockValidator.Object);
             var application = new CreditCardApplication { GrossAnnualIncome = 100_000 };
             CreditCardApplicationDecision decision = sut.Evaluate(application);
 
@@ -18,10 +21,52 @@ namespace CreditCardApplications.Tests
         [Fact]
         public void ReferYoungApplications()
         {
-            var sut = new CreditCardApplicationEvaluator(null);
+            var mockValidator =
+            new Mock<IFrequentFlyerNumberValidator>();
+
+            var sut = new CreditCardApplicationEvaluator(mockValidator.Object);
             var application = new CreditCardApplication { Age = 19 };
             CreditCardApplicationDecision decision = sut.Evaluate(application);
             Assert.Equal(CreditCardApplicationDecision.ReferredToHuman, decision);
+        }
+
+        [Fact]
+        public void DeclineowIncomeApplications()
+        {
+            var mockValidator =
+            new Mock<IFrequentFlyerNumberValidator>();
+
+            //mockValidator.Setup(x => x.IsValid("x")).Returns(true);
+
+            //Any String
+
+            //mockValidator.Setup(x => x.IsValid(It.IsAny<string>())).Returns(true);
+
+            // Predicate
+            /*mockValidator.Setup(x => x.IsValid(It.Is<string>
+                (num => num.StartsWith("y")))).Returns(true);*/
+
+            // In Range
+            /*mockValidator.Setup(x => x.IsValid(It.IsInRange
+                <string>("a","z",Moq.Range.Inclusive))).Returns(true);*/
+
+            //Certain Range
+            /*mockValidator.Setup(x => x.IsValid(It.IsIn
+                <string>("z", "y", "x"))).Returns(true);*/
+
+            //Regex
+            mockValidator.Setup(x => x.IsValid(It.IsRegex
+                ("[a-z]"))).Returns(true);
+
+            var sut = new CreditCardApplicationEvaluator(mockValidator.Object);
+            var application = new CreditCardApplication
+            { GrossAnnualIncome = 19_999,
+              Age =42,
+              FrequentFlyerNumber = "y"
+            };
+
+            CreditCardApplicationDecision decision = sut.Evaluate(application);
+            Assert.Equal(CreditCardApplicationDecision.AutoDeclined, decision);
         }
     }
 }

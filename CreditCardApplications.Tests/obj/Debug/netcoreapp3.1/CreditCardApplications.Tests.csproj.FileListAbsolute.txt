@@ -91,8 +91,10 @@ E:\Learning\Mock\mocking-moq-xunit\02\demos\after\01AddTestProject\CreditCardApp
 E:\Learning\Mock\mocking-moq-xunit\02\demos\after\01AddTestProject\CreditCardApplications.Tests\obj\Debug\netcoreapp3.1\CreditCardApplications.Tests.csprojAssemblyReference.cache
 E:\Learning\Mock\mocking-moq-xunit\02\demos\after\01AddTestProject\CreditCardApplications.Tests\obj\Debug\netcoreapp3.1\CreditCardApplications.Tests.AssemblyInfoInputs.cache
 E:\Learning\Mock\mocking-moq-xunit\02\demos\after\01AddTestProject\CreditCardApplications.Tests\obj\Debug\netcoreapp3.1\CreditCardApplications.Tests.AssemblyInfo.cs
-E:\Learning\Mock\mocking-moq-xunit\02\demos\after\01AddTestProject\CreditCardApplications.Tests\obj\Debug\netcoreapp3.1\CreditCardApplications.Tests.csproj.CoreCompileInputs.cache
 E:\Learning\Mock\mocking-moq-xunit\02\demos\after\01AddTestProject\CreditCardApplications.Tests\obj\Debug\netcoreapp3.1\CreditCardApplications.Tests.csproj.CopyComplete
 E:\Learning\Mock\mocking-moq-xunit\02\demos\after\01AddTestProject\CreditCardApplications.Tests\obj\Debug\netcoreapp3.1\CreditCardApplications.Tests.dll
 E:\Learning\Mock\mocking-moq-xunit\02\demos\after\01AddTestProject\CreditCardApplications.Tests\obj\Debug\netcoreapp3.1\CreditCardApplications.Tests.pdb
 E:\Learning\Mock\mocking-moq-xunit\02\demos\after\01AddTestProject\CreditCardApplications.Tests\obj\Debug\netcoreapp3.1\CreditCardApplications.Tests.genruntimeconfig.cache
+E:\Learning\Mock\mocking-moq-xunit\02\demos\after\01AddTestProject\CreditCardApplications.Tests\bin\Debug\netcoreapp3.1\Castle.Core.dll
+E:\Learning\Mock\mocking-moq-xunit\02\demos\after\01AddTestProject\CreditCardApplications.Tests\bin\Debug\netcoreapp3.1\Moq.dll
+E:\Learning\Mock\mocking-moq-xunit\02\demos\after\01AddTestProject\CreditCardApplications.Tests\obj\Debug\netcoreapp3.1\CreditCardApplications.Tests.csproj.CoreCompileInputs.cache
